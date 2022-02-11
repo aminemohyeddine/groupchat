@@ -25,7 +25,12 @@ const Chat = () => {
   const navigate = useNavigate();
   const cookies = new Cookies();
   var isOnIOS =
-    navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
+    navigator.userAgent.match(/Blackberry/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPhone/i);
   var eventName = isOnIOS ? "pagehide" : "beforeunload";
 
   useEffect(() => {
@@ -52,7 +57,6 @@ const Chat = () => {
     ) {
       cookies.set("joinByUrl", roomFromUrl, { path: "/" });
       cookies.set("room", roomFromUrl, { path: "/" });
-
       navigate("/");
     } else {
       cookies.remove("joinByUrl", { path: "/" });
@@ -61,8 +65,19 @@ const Chat = () => {
       socket.emit("join", { name: userName, room: roomName }, (error) => {
         if (error) {
           setNameIsTaken(true);
+          cookies.remove("userName", { path: "/" });
           cookies.set("joinByUrl", roomName, { path: "/" });
           cookies.set("room", roomName, { path: "/" });
+          console.log(
+            cookies.get("room"),
+            cookies.get("userName"),
+            cookies.get("joinByUrl")
+          );
+
+          navigate("/");
+          console.log("====================================");
+          console.log("navigate");
+          console.log("====================================");
         }
       });
       socket.on("message", (message) => {
@@ -76,6 +91,7 @@ const Chat = () => {
         setUsers(usersS.users);
         setUsers(usersS.users);
       });
+      cookies.remove("userName", { path: "/" });
     }
 
     return () => {
@@ -84,7 +100,7 @@ const Chat = () => {
       socket.emit("userDisconnect");
       socket.off();
     };
-  }, [navigate, roomFromUrl]);
+  }, []);
 
   window.addEventListener(eventName, () => {
     cookies.remove("room", { path: "/" });
@@ -103,12 +119,6 @@ const Chat = () => {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
   };
-
-  useEffect(() => {
-    if (nameIsTaken) {
-      navigate("/");
-    }
-  }, [nameIsTaken]);
 
   return (
     <>
