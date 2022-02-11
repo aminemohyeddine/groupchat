@@ -1,0 +1,188 @@
+button {
+  border: none;
+}
+.infoBarContainer {
+  height: 10vh;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.infoBarTextContainer {
+  margin-left: 10px;
+}
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(207, 207, 207);
+  width: 100%;
+}
+
+.roomName {
+  cursor: pointer;
+  color: #f9fbff;
+}
+.roomName:hover {
+  text-decoration: underline;
+}
+
+.userName {
+  color: rgb(0, 0, 0);
+}
+.menuContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  width: 50%;
+}
+.leaveGroup > p {
+  color: white;
+}
+.leaveGroupContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  margin-left: 6px;
+  margin-right: 20px;
+  width: 200px;
+}
+.leaveGroupText {
+  color: white;
+}
+
+.leaveGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid red;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.leaveGroup:hover {
+  background-color: rgb(37, 250, 0);
+}
+
+.leaveGroup:hover > .activeUsersText {
+  color: #18ffff;
+}
+.leaveGroup:hover > .activeButton {
+  color: white;
+}
+.leaveGroup > p {
+  font-size: 1rem;
+  margin-left: 15px;
+}
+
+.copiedText {
+  color: white;
+  position: absolute;
+  top: 20px;
+  font-size: 0.8rem;
+  animation: moving 0.1s ease-in-out;
+  background-color: transparent;
+  animation-fill-mode: forwards;
+}
+@keyframes moving {
+  from {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+.groupButton {
+  color: #18ffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .menuContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    width: 70%;
+  }
+  .leaveGroupContainer {
+    position: relative;
+    width: 150px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .roomName {
+    font-size: 1rem;
+  }
+  .infoBarContainer {
+    height: 10vh;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  .leaveGroup > p {
+    font-size: 0.8rem;
+  }
+  .leaveGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid red;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 4.5vh;
+  }
+  .groupButton {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .leaveGroupContainer {
+    position: relative;
+    width: 70px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leaveGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid red;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 4.5vh;
+  }
+  .menuContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    padding-right: 0px;
+  }
+  .infoBarContainer {
+    width: 50%;
+  }
+  .copiedText {
+    font-size: 0.6rem;
+  }
+  .copiedText {
+    width: 55px;
+  }
+}

@@ -1,0 +1,13 @@
+.messages {
+  padding: 2% 0;
+  overflow: auto;
+  flex: auto;
+}
+.react-scroll-to-bottom--css-azxbf-79elbk .messages,
+.react-scroll-to-bottom--css-azxbf-1n7m0yu,
+.messages {
+  height: 80vh;
+}
+.react-scroll-to-bottom--css-eabgy-1n7m0yu {
+  height: 70vh;
+}

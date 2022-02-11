@@ -1,0 +1,151 @@
+input {
+  border: none; /* Removes the default border */
+}
+
+input:focus {
+  outline: none; /* Removes the border when the input is clicked */
+}
+.inputContainer {
+  padding-left: 10px;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+}
+
+.sendMessageInput {
+  width: 80%;
+  height: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+.emojisContainer {
+  position: absolute;
+  right: 10px;
+  bottom: 8.5vh;
+}
+.emojisButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  top: -15px;
+  position: relative;
+}
+
+.activeUsersContainer {
+  position: relative;
+  top: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  margin-left: 6px;
+  margin-right: 20px;
+  width: 140px;
+}
+
+.activeUsers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #18ffff;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+.activeUsers:hover {
+  background-color: rgb(37, 250, 0);
+}
+.activeButton {
+  font-size: 0.6rem;
+}
+.activeUsersText {
+  font-size: 0.8rem;
+  margin-left: 15px;
+}
+.activeUsers:hover > .activeUsersText {
+  color: #18ffff;
+}
+.activeUsers:hover > .activeButton {
+  color: white;
+}
+
+.activeUsersList {
+  position: absolute;
+  right: 4%;
+  bottom: 8vh;
+  padding-top: 10px;
+  width: 180px;
+  padding-bottom: 10px;
+  background-color: azure;
+  z-index: 100000;
+  border-radius: 10px;
+  border: solid 1px rgb(37, 250, 0);
+}
+.usersListUser {
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: azure;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  width: fit-content;
+  /* border: solid 1px rgb(37, 250, 0); */
+}
+.usersListUser {
+  display: flex;
+}
+.smileEmoji {
+  color: #0d73ef;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.paperEmojiContainer {
+  height: 10vh;
+  top: -15px;
+  position: relative;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.paperEmoji {
+  color: rgb(44, 212, 14);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .activeUsersText {
+    font-size: 0.6rem;
+    margin-left: 5px;
+  }
+  .activeUsersContainer {
+    width: 120px;
+  }
+  .smileEmoji {
+    color: #0d73ef;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .paperEmoji {
+    color: rgb(44, 212, 14);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 493px) {
+  .activeUsers {
+    padding: 0px;
+  }
+  .userName {
+    font-size: 0.8rem;
+  }
+  .activeUsersList {
+    width: 30%;
+  }
+}
